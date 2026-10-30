@@ -21,6 +21,18 @@ The look is editorial "magazine / UI notes" — restrained type, evidence-first 
 
 Every run also writes the **post title (≤ 20 chars)**, a structured **post body**, and the **pinned comment** with the full prompt text — so the images and the copy ship together.
 
+## Sample output
+
+Rendered from the skill's bundled example issue — one cover plus four inner pages, light theme:
+
+<p align="center">
+  <img src="docs/card_01.jpg" width="31%" alt="Cover: AI 写 UI 总爱犯这 4 个毛病">
+  <img src="docs/card_02.jpg" width="31%" alt="Prompt page: copywriting before/after">
+  <img src="docs/card_03.jpg" width="31%" alt="Prompt page: color before/after">
+</p>
+
+The full five-page set ships in [`docs/`](docs/) — rendered with the bundled template at 2172 × 2896 (shown at half size). The dark theme and the pick-cover layout are documented in [`xhs-ai-notes/examples/`](xhs-ai-notes/examples/).
+
 ## How a run works
 
 1. Confirm the topic, page count, and any screenshots you provide; pick the light or dark theme (dark when your screenshots are pale and need contrast).

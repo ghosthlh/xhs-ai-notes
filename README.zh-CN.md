@@ -21,6 +21,18 @@
 
 每次运行同时写好**投稿标题（≤ 20 字）**、结构化的**投稿正文**和带完整提示词的**置顶评论**——图片和文案一起交付。
 
+## 效果示例
+
+用技能自带的第 1 期示例渲染——1 张封面 + 4 张内页，浅色模板：
+
+<p align="center">
+  <img src="docs/card_01.jpg" width="31%" alt="封面：AI 写 UI 总爱犯这 4 个毛病">
+  <img src="docs/card_02.jpg" width="31%" alt="提示词页：文案 BEFORE/AFTER">
+  <img src="docs/card_03.jpg" width="31%" alt="提示词页：配色 BEFORE/AFTER">
+</p>
+
+完整五张在 [`docs/`](docs/)——用自带模板渲染，2172 × 2896（此处显示为半尺寸）。深色模板与推荐版封面见 [`xhs-ai-notes/examples/`](xhs-ai-notes/examples/)。
+
 ## 一期的工作流
 
 1. 确认主题、页数和你提供的截图；选择浅色或深色模板（截图偏浅、需要拉开对比时用深色）。
