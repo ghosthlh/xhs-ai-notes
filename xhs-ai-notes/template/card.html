@@ -1,0 +1,156 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+/* type: 4 sizes · 4 colours · 2 families  |  space: 8 / 16 / 24 / 48 (+ page 80/96) */
+:root{--ink:#14181F;--sub:#4A5160;--mute:#959CAA;--line:rgba(20,24,31,.12);--blue:#2F6BFF;--blue-l:#E8EFFF;--sk:#E4E7ED;
+ --s1:20px;--s2:32px;--s3:80px;--s4:200px;--g1:8px;--g2:16px;--g3:24px;--g4:48px}
+html,body{width:1086px;height:1448px}
+body{position:relative;overflow:hidden;background:#F7F8FA;font-family:"Inter","Noto Sans CJK SC",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.orb{position:absolute;border-radius:50%;filter:blur(100px)}
+.o1{width:820px;height:820px;right:-320px;top:-340px;background:#BCD3FF;opacity:.7}
+.o2{width:560px;height:560px;left:-300px;bottom:-120px;background:#DCE6FF;opacity:.6}
+.page{position:absolute;inset:0;padding:80px 96px;display:flex;flex-direction:column}
+.meta{font-size:var(--s1);line-height:24px;letter-spacing:.2em;color:var(--mute);font-weight:500}
+.hd{display:flex;justify-content:space-between;padding-bottom:var(--g3);border-bottom:1px solid var(--line)}
+.hd .l{display:flex;align-items:center;gap:var(--g2)}.hd .l i{width:8px;height:8px;background:var(--blue)}
+.hd .pg b{color:var(--ink);font-weight:500}
+.sec{display:flex;justify-content:space-between;align-items:flex-end;margin-top:var(--g3)}
+.num{font-weight:200;font-size:var(--s4);line-height:160px;padding:8px 0;letter-spacing:-.05em;
+ background:linear-gradient(180deg,#2F6BFF 8%,rgba(47,107,255,.22) 58%,rgba(47,107,255,.05) 100%);-webkit-background-clip:text;color:transparent}
+.cat{text-align:right;padding-bottom:var(--g3)}.cat .zh{font-size:var(--s2);line-height:56px;letter-spacing:.4em;margin-right:-.4em}
+h1{font-size:var(--s3);font-weight:500;line-height:96px;letter-spacing:.03em;margin-top:var(--g1)}
+h1 span{display:block}
+.cmp{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:var(--g3)}
+.cmp .cap{margin-bottom:var(--g2)}.cmp .cap.on{color:var(--blue)}
+.mk{height:288px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:12px;padding:var(--g3);position:relative;overflow:hidden}
+.lab{display:flex;justify-content:space-between;margin-top:var(--g4);padding-bottom:var(--g2);border-bottom:1px solid var(--line)}
+.lab .zh{color:var(--blue)}
+.p{display:grid;grid-template-columns:48px 1fr;padding:var(--g3) 0}
+.p+.p{border-top:1px solid var(--line)}
+.p .k{font-size:var(--s2);font-weight:300;color:var(--blue);height:56px;line-height:56px}
+.p p{font-size:var(--s2);font-weight:350;line-height:56px;color:var(--sub);letter-spacing:.03em;word-break:keep-all;overflow-wrap:anywhere}
+.p p b{font-weight:500;color:var(--ink);white-space:nowrap}
+/* mock */
+.sk{height:8px;border-radius:4px;background:var(--sk)}.skd{background:#C9CFDA}
+.t{font-family:"Noto Sans CJK SC";font-size:18px;line-height:24px;color:var(--sub)}
+.t.b{font-weight:500;color:var(--ink)}.t.m{color:var(--mute)}
+.inp{height:36px;border:1px solid #D5DAE2;border-radius:8px;background:#fff}
+.btn{height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--blue)}
+.row{display:flex;justify-content:space-between;align-items:baseline;font-family:"Noto Sans CJK SC"}
+.row .meta{letter-spacing:.08em;font-size:16px;line-height:1}
+/* cover */
+.note{margin-top:var(--g3);display:grid;grid-template-columns:72px 1fr;font-size:var(--s2);line-height:56px;font-weight:350;color:var(--sub);letter-spacing:.06em}
+.toc{margin-top:var(--g4)}
+.toc .r{display:grid;grid-template-columns:72px 1fr auto;align-items:center;height:72px;border-top:1px solid var(--line)}
+.toc .n{font-size:var(--s1);font-weight:600;color:var(--blue)}
+.toc .tt{font-size:var(--s2);font-weight:400;letter-spacing:.03em}
+
+.cv-t{font-size:96px;font-weight:500;letter-spacing:.03em;margin-top:var(--g3)}
+.cv-t .l1{line-height:112px}
+.cv-t .l2{line-height:112px;display:flex;align-items:baseline;white-space:nowrap}
+.cv-t .big{font-family:Inter;font-weight:400;font-size:96px;line-height:112px;margin:0 16px;color:var(--blue)}
+.cv .toc{margin-top:96px}
+.cv .toc .r{height:96px;align-items:center}.toc .r>span{line-height:1}
+.cv .toc .n{font-size:var(--s2);font-weight:400;font-family:Inter}
+.cv .toc .n{font-family:FrI,serif;font-style:italic;font-variation-settings:"SOFT" 0,"WONK" 1}
+html.bg .page,html.bg .brand{visibility:hidden}
+html.fg body{background:transparent!important}html.fg .orb,html.fg .gfx{display:none}
+.brand{position:absolute;left:96px;right:96px;bottom:48px;z-index:5;opacity:.5;letter-spacing:.24em;display:flex;justify-content:space-between;align-items:baseline}.brand span+span{margin-right:-.24em}
+.note .k{color:var(--blue);font-family:Inter;font-weight:300}
+
+/* ---------- extensions (shared) ---------- */
+.shot{margin-top:32px}.shot .cap{display:flex;justify-content:space-between;margin-bottom:var(--g2)}.shot .cap .on{color:var(--blue)}
+.shot .im{border:1px solid var(--line);border-radius:12px;overflow:hidden;line-height:0}.shot img{width:100%;display:block}
+.mk.img{padding:0}.mk.img img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.dense .p{padding:var(--g2) 0}
+.p .k.n{font-family:Inter;font-size:var(--s1);font-weight:600;letter-spacing:.1em}
+.cv-t .ln{line-height:112px;display:flex;align-items:baseline;white-space:nowrap}
+/* ---------- theme: dark (teal accent, faint grid) ---------- */
+html.dark{--ink:#E8EEED;--sub:#9AA6A4;--mute:#66726F;--line:rgba(255,255,255,.16);--blue:#2ED8AA;--blue-l:#0F2E26}
+html.dark body{background:#060808}
+html.dark .o1{background:#0D3D33;opacity:.3}html.dark .o2{background:#0A2A26;opacity:.2}
+html.dark .num{font-family:FrI,serif;font-style:italic;font-weight:300;font-variation-settings:"opsz" 144,"SOFT" 0,"WONK" 1;letter-spacing:-.01em;font-size:216px;line-height:200px;margin-bottom:-40px;position:relative;top:-25px;padding-right:16px;background:linear-gradient(180deg,#2ED8AA 8%,rgba(46,216,170,.74) 36%,rgba(46,216,170,0) 70%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px #2ED8AA;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.7) 8%,rgba(0,0,0,.08) 96%)}
+html.dark .shot .im,html.dark .mk{border-color:rgba(255,255,255,.12)}
+html:not(.dark) .num{font-family:FrI,serif;font-style:italic;font-weight:300;font-variation-settings:"opsz" 144,"SOFT" 0,"WONK" 1;letter-spacing:-.01em;font-size:216px;line-height:200px;margin-bottom:-40px;position:relative;top:-25px;padding-right:16px;background:linear-gradient(180deg,#2F6BFF 8%,rgba(47,107,255,.74) 36%,rgba(47,107,255,0) 70%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px #2F6BFF;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1) 8%,rgba(0,0,0,.16) 96%)}
+.cv-im{margin-top:48px;display:grid;gap:16px}.cv-im .im{aspect-ratio:3/4;border:1px solid var(--line);border-radius:8px;overflow:hidden;line-height:0}.cv-im img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- v2 refinements ---------- */
+.page{padding-top:48px}
+.num{padding:8px 0 0}.sec+h1{margin-top:0}
+.shot .cap span:first-child{color:var(--blue)}
+.shot .cap .on{color:var(--mute)}
+.grid6{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px 16px}
+.grid6 .cap{margin-bottom:var(--g1);letter-spacing:.12em;white-space:nowrap}.grid6 .cap b{font-weight:600;color:var(--sub);margin-right:8px}
+.grid6 .hi .cap,.grid6 .hi .cap b{color:var(--blue)}
+.grid6 .im{border:1px solid var(--line);border-radius:8px;overflow:hidden;aspect-ratio:var(--ar,1512/982);line-height:0}.grid6 img{width:100%;height:100%;object-fit:cover;object-position:top}
+.pk-in{margin-top:48px;height:88px;border:1px solid rgba(20,24,31,.1);background:rgba(255,255,255,.9);border-radius:14px;display:flex;align-items:center;gap:16px;padding:0 24px;box-shadow:0 20px 56px -32px rgba(40,70,140,.16)}
+.pk-in svg{flex:none}.pk-in .u{font-family:Inter;font-size:32px;line-height:1;letter-spacing:.01em;white-space:nowrap}.pk-in .u span{color:var(--mute);font-weight:400}.pk-in .u b{color:var(--ink);font-weight:500}
+.pk-in .cr{width:2px;height:36px;background:var(--blue);margin-left:-12px}
+.pk-in .kb{margin-left:auto;font-family:Inter;font-size:20px;line-height:1;color:var(--mute);border:1px solid rgba(20,24,31,.12);border-radius:6px;padding:6px 8px}
+.pk-im{margin-top:64px;display:grid;gap:16px}.pk-im .im{aspect-ratio:3/4;border:1px solid var(--line);border-radius:8px;overflow:hidden;line-height:0}.pk-im img{width:100%;height:100%;object-fit:cover}
+.bento{margin-top:32px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}.bento .im{border:1px solid var(--line);border-radius:8px;overflow:hidden;line-height:0;aspect-ratio:3/4}.bento .im:first-child{grid-row:span 2;aspect-ratio:auto}.bento img{width:100%;height:100%;object-fit:cover}
+@font-face{font-family:FrI;src:url(fonts/FrauncesItalic.ttf),local("Fraunces Italic"),local("Fraunces 144pt Italic");font-weight:100 900;font-style:italic}
+</style></head><body>
+<div class="orb o1"></div><div class="orb o2"></div>
+<div class="gfx" id="gfx"></div>
+<div class="page" id="pg"></div><div class="brand meta" id="brand"></div>
+<script src="content.js"></script>
+<script>
+/* renderer: window.CONTENT · ?p=0 cover, ?p=1..n cards · ?layer=bg|fg */
+const C=window.CONTENT, Q=new URLSearchParams(location.search), P=+Q.get('p'), L=Q.get('layer');
+if(L)document.documentElement.classList.add(L);
+if(C.theme)document.documentElement.classList.add(C.theme);
+const N=C.cards.length+1, pad=n=>String(n).padStart(2,'0');
+document.getElementById('brand').innerHTML=(C.brand||'').split('·').map(t=>`<span>${t.trim()}</span>`).join('');
+const seg=s=>typeof s==='string'?`<span>${s}</span>`:`<span class="big">${s.hi}</span>`;
+let h;
+if(P===0&&C.cover.style==='pick'){const v=C.cover;
+ h=`<div class="hd meta"><div class="l"><i></i>${C.header}</div><div class="pg"><b>01</b> / ${pad(N)}</div></div>
+ <div class="cv-t" style="margin-top:${v.top||192}px">${v.lines.map(l=>`<div class="ln">${l.map((s,i)=>i===0&&typeof s==='string'?`<span data-opt>${s}</span>`:seg(s)).join('')}</div>`).join('')}</div>
+ <div class="pk-in"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#959CAA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span class="u"><span>${v.url||''}</span><b>${v.skill}</b></span><i class="cr"></i><span class="kb">↵</span></div>
+ <div class="note"><span class="k">/</span><span>${v.subtitle}</span></div>
+ <div class="pk-im" style="grid-template-columns:repeat(${v.imgs.length},1fr)">${v.imgs.map(s=>`<div class="im"><img src="${s}"></div>`).join('')}</div>`;}
+else if(P===0){const v=C.cover;
+ const lines=v.lines||[[v.line1],[v.line2[0],...(v.line2[1]?[{hi:v.line2[1]},v.line2[2]||'']:[])]];
+ const toc=C.toc||C.cards.map((x,i)=>({n:pad(i+1),t:x.title,m:x.zh}));
+ h=`<div class="hd meta"><div class="l"><i></i>${C.header}</div><div class="pg"><b>01</b> / ${pad(N)}</div></div>
+ <div class="cv-t" style="margin-top:${v.top||192}px">${lines.map(l=>`<div class="ln">${l.map((s,i)=>i===0&&typeof s==='string'?`<span data-opt>${s}</span>`:seg(s)).join('')}</div>`).join('')}</div>
+ <div class="note"><span class="k">/</span><span>${v.subtitle}</span></div>
+ <div class="toc">${toc.map(x=>`<div class="r"><span class="n">${x.n}</span><span class="tt">${x.t}</span><span class="meta">${x.m}</span></div>`).join('')}</div>${v.imgs?`<div class="cv-im" style="grid-template-columns:repeat(${v.imgs.length},1fr)">${v.imgs.map(s=>`<div class="im"><img src="${s}"></div>`).join('')}</div>`:''}`;
+ document.getElementById('pg').classList.add('cv');}
+else{const d=C.cards[P-1];
+ const cmp=d.before||d.beforeImg?`<div class="cmp"><div><div class="cap meta">${d.caps?d.caps[0]:'BEFORE'}</div><div class="mk${d.beforeImg?' img':''}"${d.cmpRatio?` style="height:auto;aspect-ratio:${d.cmpRatio}"`:''}>${d.beforeImg?`<img src="${d.beforeImg}">`:d.before}</div></div><div><div class="cap meta on">${d.caps?d.caps[1]:'AFTER'}</div><div class="mk${d.afterImg?' img':''}"${d.cmpRatio?` style="height:auto;aspect-ratio:${d.cmpRatio}"`:''}>${d.afterImg?`<img src="${d.afterImg}">`:d.after}</div></div></div>`:'';
+ const shot=d.shot?`<div class="shot">${d.shotCap?`<div class="cap meta"><span>${d.shotCap[0]}</span><span class="on">${d.shotCap[1]}</span></div>`:''}<div class="im"><img src="${d.shot}"></div></div>`:'';
+ const lab=d.label||[C.promptLabel||'修改提示词','PROMPT'];
+ h=`<div class="hd meta"><div class="l"><i></i>${C.header}</div><div class="pg"><b>${pad(P+1)}</b> / ${pad(N)}</div></div>
+ ${d.n===false?'':`<div class="sec"><div class="num" data-opt>${d.n||pad(P)}</div><div class="cat"><div class="zh">${d.zh}</div><div class="meta">${d.en}</div></div></div>`}
+ <h1${d.n===false?' style="margin-top:96px"':''}><span data-opt>${d.title}</span></h1>${cmp}${shot}${d.bento?`<div class="bento">${d.bento.map(s=>`<div class="im"><img src="${s}"></div>`).join('')}</div>`:''}${d.grid?`<div class="grid6"${d.gridRatio?` style="--ar:${d.gridRatio}"`:''}>${d.grid.map(g=>`<div class="gi${g.hi?' hi':''}"><div class="cap meta">${g.n?`<b>${g.n}</b>`:''}${g.cap}</div><div class="im"><img src="${g.img}"></div></div>`).join('')}</div>`:''}
+ <div class="lab meta"${d.n===false&&!cmp&&!shot&&!d.grid?' style="margin-top:104px"':''}><span class="zh">${lab[0]}</span><span>${lab[1]}</span></div>
+ <div class="${d.dense?'dense':''}">${d.prompts.map(x=>{const o=typeof x==='string'?{t:x}:x;return `<div class="p"><span class="k${o.k?' n':''}">${o.k||'/'}</span><p>${o.t}</p></div>`}).join('')}</div>`;}
+document.getElementById('pg').innerHTML=h;
+const ready=Promise.all([...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r})));
+ready.then(()=>{
+/* optical left alignment */
+document.querySelectorAll('[data-opt]').forEach(el=>{const cs=getComputedStyle(el),c=document.createElement('canvas').getContext('2d');
+ c.font=`${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;el.style.marginLeft=c.measureText([...el.textContent.trim()][0]).actualBoundingBoxLeft+'px';});
+/* optical vertical centring of cover menu */
+const c=document.createElement('canvas').getContext('2d');
+const f=e=>{const cs=getComputedStyle(e);return `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`};
+const mid=e=>{c.font=f(e);const m=c.measureText(e.textContent);return (m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2};
+/* each span: move its ink centre onto its em-box centre (rows are align-items:center, line-height:1) */
+document.querySelectorAll('.toc .r>span').forEach(e=>{c.font=f(e);const m=c.measureText(e.textContent);
+ e.style.transform=`translateY(${((m.fontBoundingBoxDescent-m.fontBoundingBoxAscent)-(m.actualBoundingBoxDescent-m.actualBoundingBoxAscent))/2}px)`;});
+/* background graphic: sliced sphere, bottom-right, very light */
+(()=>{const dk=document.documentElement.classList.contains('dark');const cx=960,cy=1330,r=340,B=dk?'#2ED8AA':'#2F6BFF',K=dk?'#FFFFFF':'#14181F',S=12,HI=5;let o='';
+ for(let i=1;i<=S;i++){const t=-Math.PI/2+Math.PI*i/(S+1),y=cy+r*Math.sin(t),rx=r*Math.cos(t),hi=i==HI;
+  o+=`<ellipse cx="${cx}" cy="${y.toFixed(1)}" rx="${rx.toFixed(1)}" ry="${(rx*.22).toFixed(1)}" fill="none" stroke="${hi?B:K}" stroke-opacity="${hi?(dk?.3:.2):(dk?.07:.065)}"/>`;}
+ o+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${K}" stroke-opacity=".05"/>`;
+ document.getElementById('gfx').innerHTML=`<svg width="1086" height="1448" style="position:absolute;inset:0"><g transform="rotate(-16 ${cx} ${cy})">${o}</g></svg>`;})();
+/* QA */
+const issues=[];const last=document.getElementById('pg').lastElementChild.getBoundingClientRect().bottom;
+if(last>1448-80)issues.push('CONTENT_TOO_LONG:'+Math.round(last));
+document.querySelectorAll('.mk').forEach((m,i)=>{if(m.scrollHeight>m.clientHeight+1)issues.push('MOCK_OVERFLOW:'+i)});
+document.querySelectorAll('h1 span,.cv-t .ln').forEach(s=>{if(s.getBoundingClientRect().height>120||s.scrollWidth>s.clientWidth+1)issues.push('TITLE_WRAPS')});
+if(document.getElementById('pg').scrollWidth>1086)issues.push('TOO_WIDE');
+document.title=(issues.length?issues.join(' '):'OK')+' |bottom:'+Math.round(last);
+});
+</script></body></html>
