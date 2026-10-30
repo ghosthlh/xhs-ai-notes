@@ -1,6 +1,6 @@
 ---
 name: xhs-ai-notes
-description: 制作小红书 AI 类图文投稿（3:4 卡片组 + 投稿文案 + 置顶评论），杂志/UI 风格，有浅色与深色两套模板，适用于 AI 编程、提示词、工具测评对比等主题。
+description: 制作小红书 AI 类图文投稿（3:4 卡片组 + 投稿文案 + 置顶评论），杂志/UI 风格，有浅色与深色两套模板，适用于 AI 编程、提示词、工具测评对比等主题。Create Xiaohongshu (RED) photo posts on AI topics — a set of 3:4 cards plus post copy and a pinned comment — in a magazine/UI style with light and dark themes. Use for AI coding, prompt-writing, and tool or skill review topics.
 ---
 
 # 小红书 AI 图文投稿（模板：AI Notes 杂志风）
